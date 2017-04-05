@@ -1,5 +1,5 @@
 package domains.prefecture
 
-trait PrefectureAdapter {
+trait PrefectureRepository {
   def all(): List[String]
 }

@@ -2,7 +2,7 @@ package services.queries
 
 import javax.inject._
 
-import domains.prefecture.PrefectureAdapter
+import domains.prefecture.PrefectureRepository
 
 /**
   * Created by shota-toguchi on 2017/04/05.
@@ -13,9 +13,9 @@ trait PrefectureQueryService {
 }
 
 @Singleton
-class PrefectureQueryServiceImpl @Inject() (prefectureAdapter: PrefectureAdapter) extends PrefectureQueryService {
+class PrefectureQueryServiceImpl @Inject() (prefectureRepository: PrefectureRepository) extends PrefectureQueryService {
   override def perform(): Map[String, List[String]] = {
-    val result = prefectureAdapter.all()
+    val result = prefectureRepository.all()
     Map("result" -> result)
   }
 }
