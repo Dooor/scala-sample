@@ -1,6 +1,9 @@
 import com.google.inject.AbstractModule
 import java.time.Clock
 
+import domains.prefecture.PrefectureAdapter
+import infrastructures.adapters.prefecture.PrefectureAdapterImpl
+
 import services.{ApplicationTimer, AtomicCounter, Counter}
 import services.queries.{PrefectureQueryService, PrefectureQueryServiceImpl}
 
@@ -27,10 +30,15 @@ class Module extends AbstractModule {
     bind(classOf[Counter]).to(classOf[AtomicCounter])
 
     configureService()
+
+    configureAdapters()
   }
 
   private def configureService() = {
     bind(classOf[PrefectureQueryService]).to(classOf[PrefectureQueryServiceImpl])
   }
 
+  private def configureAdapters() = {
+    bind(classOf[PrefectureAdapter]).to(classOf[PrefectureAdapterImpl])
+  }
 }
