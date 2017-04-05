@@ -1,3 +1,6 @@
+// Playバージョン
+// 2.5.10
+
 // ビルドシステム
 // https://playframework.com/documentation/ja/2.4.x/Build
 
