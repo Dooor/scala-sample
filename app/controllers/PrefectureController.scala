@@ -14,7 +14,7 @@ import services.queries.PrefectureQueryService
 class PrefectureController @Inject() (prefectureQueryService: PrefectureQueryService) extends Controller {
 
   def index = Action {
-    val result = prefectureQueryService.perform()
+    val result = prefectureQueryService.all()
     Ok(Json.toJson(result))
   }
 

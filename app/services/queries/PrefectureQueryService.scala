@@ -9,12 +9,12 @@ import domains.prefecture.PrefectureRepository
   */
 
 trait PrefectureQueryService {
-  def perform(): Map[String, List[String]]
+  def all(): Map[String, List[String]]
 }
 
 @Singleton
 class PrefectureQueryServiceImpl @Inject() (prefectureRepository: PrefectureRepository) extends PrefectureQueryService {
-  override def perform(): Map[String, List[String]] = {
+  override def all(): Map[String, List[String]] = {
     val result = prefectureRepository.all()
     Map("result" -> result)
   }
