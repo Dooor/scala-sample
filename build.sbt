@@ -16,10 +16,19 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.7"
 
 // ライブラリ依存性の管理
+// https://playframework.com/documentation/ja/2.4.x/SBTDependencies
 libraryDependencies ++= Seq(
   // データベース接続用のライブラリ
   // http://scalikejdbc.org/
-  jdbc,
+  // jdbc,
+
+  // GitHub: https://github.com/playframework/play-slick
+  // Doc: https://www.playframework.com/documentation/ja/2.4.x/PlaySlick
+  "com.typesafe.play" %% "play-slick" % "2.1.0",
+  "com.typesafe.play" %% "play-slick-evolutions" % "2.1.0",
+
+  // MySQL接続ドライバ
+  "mysql" % "mysql-connector-java" % "5.1.41",
 
   // キャッシュ管理
   // https://www.playframework.com/documentation/2.5.x/JavaCache
